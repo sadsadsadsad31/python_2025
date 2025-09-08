@@ -73,3 +73,36 @@ print("Длина 2 диагоналей", d1 * d2 /2)
 '''
 print("To be", '\n' "or not" '\n' "to be")
 '''
+
+'''
+#условные конструкции
+age = int(input("Введите ваш возраст: "))
+#if (Условие == true:
+# функция действие
+if age < 10 :
+    print("тЫ ЕЩЕ МАЛЫШ")
+else:
+    print("Вы уже взрослый")
+'''
+'''
+age = int(input("Введите ваш возраст: "))
+if 0 < age < 10 :
+        print("Ты еще малыш")
+    if age < 20 and age < 10 :
+        print("Ты еще подросток")
+    if 20 < age < 45 :
+        print("Ты молодеж")
+    if 45 < age < 100 :
+        print("Ты уже пенсионер")
+    else:
+        print("Некорректный возраст")
+'''
+
+print('Введи 3 числа')
+
+num1 = int(input())
+num2 = int(input())
+num3 = int(input())
+
+print("Сумма ", num1 + num2 + num3, "Умножение ", num1 * num2 * num3)
+    

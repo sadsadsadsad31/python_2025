@@ -97,12 +97,60 @@ if 0 < age < 10 :
     else:
         print("Некорректный возраст")
 '''
+'''
+#ДЗ ЗАДАНИЕ 1
+num1 = float(input("Введите первое число: "))
+num2 = float(input("Введите второе число: "))
+num3 = float(input("Введите третье число: "))
 
-print('Введи 3 числа')
+operation = input("Выберите операцию (сумма/произведение): ").lower()
 
-num1 = int(input())
-num2 = int(input())
-num3 = int(input())
+if operation == "сумма":
+    result = num1 + num2 + num3
+elif operation == "произведение":
+    result = num1 * num2 * num3
+else:
+    print("Некорректный выбор операции.")
+    exit()
 
-print("Сумма ", num1 + num2 + num3, "Умножение ", num1 * num2 * num3)
-    
+print("Результат:", result)
+
+#ДЗ ЗАДАНИЕ 2
+
+num1 = float(input("Введите первое число: "))
+num2 = float(input("Введите второе число: "))
+num3 = float(input("Введите третье число: "))
+
+operation = input("Выберите операцию (максимум/минимум/среднее): ").lower()
+
+if operation == "максимум":
+    result = max(num1, num2, num3)
+elif operation == "минимум":
+    result = min(num1, num2, num3)
+elif operation == "среднее":
+    result = (num1 + num2 + num3) / 3
+else:
+    print("Некорректный выбор операции.")
+    exit()
+
+print("Результат:", result)
+
+#ДЗ ЗАДАНИЕ 3
+
+meters = float(input("Введите количество метров: "))
+
+unit = input("Выберите единицу измерения для перевода (мили/дюймы/ярды): ").lower()
+
+if unit == "мили":
+    result = meters * 0.000621371
+elif unit == "дюймы":
+    result = meters * 39.3701
+elif unit == "ярды":
+    result = meters * 1.09361
+else:
+    print("Некорректный выбор единицы измерения.")
+    exit()
+
+print("Результат:", result, unit)
+
+'''

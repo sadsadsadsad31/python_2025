@@ -154,3 +154,86 @@ else:
 print("Результат:", result, unit)
 
 '''
+'''
+#ДЗ ЗАДАНИЕ 1
+number = int(input("Введите число от 1 до 100: "))
+
+if 1 <= number <= 100:
+    if number % 3 == 0 and number % 5 == 0:
+        print("Fizz Buzz")
+    elif number % 3 == 0:
+        print("Fizz")
+    elif number % 5 == 0:
+        print("Buzz")
+    else:
+        print(number)
+else:
+    print("Ошибка: число должно быть в диапазоне от 1 до 100.")
+    '''
+'''
+#ДЗ ЗАДАНИЕ 2
+    base = float(input("Введите число: "))
+exponent = int(input("Введите степень (от 0 до 7): "))
+
+if 0 <= exponent <= 7:
+    result = base ** exponent
+    print(f"{base} в степени {exponent} равно {result}")
+else:
+    print("Ошибка: степень должна быть в диапазоне от 0 до 7.")
+    '''
+    '''
+    #ДЗ ЗАДАНИЕ 3
+cost_per_minute = float(input("Введите стоимость разговора за минуту: "))
+operator_from = input("Выберите оператора, с которого звоните: ")
+operator_to = input("Выберите оператора, на который звоните: ")
+
+# Пример тарифов
+tariffs = {
+    ("OperatorA", "OperatorB"): 1.0,
+    ("OperatorA", "OperatorC"): 1.2,
+    ("OperatorB", "OperatorA"): 0.9,
+    ("OperatorB", "OperatorC"): 1.1,
+    ("OperatorC", "OperatorA"): 1.3,
+    ("OperatorC", "OperatorB"): 0.8,
+}
+
+if (operator_from, operator_to) in tariffs:
+    tariff = tariffs[(operator_from, operator_to)]
+    total_cost = cost_per_minute * tariff
+    print(f"Стоимость разговора: {total_cost:.2f}")
+else:
+    print("Ошибка: тариф не найден.")
+'''
+'''
+#ДЗ ЗАДАНИЕ 4
+def calculate_salary(sales):
+    base_salary = 200
+    if sales < 500:
+        commission = sales * 0.03
+    elif 500 <= sales <= 1000:
+        commission = sales * 0.05
+    else:
+        commission = sales * 0.08
+    return base_salary + commission
+
+sales_manager1 = float(input("Введите уровень продаж для менеджера 1: "))
+sales_manager2 = float(input("Введите уровень продаж для менеджера 2: "))
+sales_manager3 = float(input("Введите уровень продаж для менеджера 3: "))
+
+salary_manager1 = calculate_salary(sales_manager1)
+salary_manager2 = calculate_salary(sales_manager2)
+salary_manager3 = calculate_salary(sales_manager3)
+
+max_salary = max(salary_manager1, salary_manager2, salary_manager3)
+if max_salary == salary_manager1:
+    salary_manager1 += 200  # Премия
+elif max_salary == salary_manager2:
+    salary_manager2 += 200  # Премия
+else:
+    salary_manager3 += 200  # Премия
+
+print(f"Зарплата менеджера 1: {salary_manager1}")
+print(f"Зарплата менеджера 2: {salary_manager2}")
+print(f"Зарплата менеджера 3: {salary_manager3}")
+'''
+

@@ -135,3 +135,96 @@ while True:
     else:
         print("Меньше.")
 '''
+
+
+#9.25
+
+#2
+'''
+def find_minimum(numbers):
+
+    if not numbers:
+        return None, numbers  # Возвращаем None если список пуст
+
+
+    minimum = numbers[0]
+
+
+    for num in numbers:
+        # Если нашли число меньше текущего минимума
+        if num < minimum:
+            minimum = num  # Обновляем минимум
+
+
+    return minimum, numbers
+
+
+numbers_list = [5, 3, 8, 1, 9, 2]
+min_value, original_list = find_minimum(numbers_list)
+print(f"Минимальный элемент: {min_value}")
+print(f"Исходный список: {original_list}")
+'''
+#3
+'''
+def is_prime(n):
+
+    if n <= 1:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    for i in range(3, int(n**0.5) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
+
+def count_primes(numbers):
+    
+    prime_count = 0
+    for num in numbers:
+        if is_prime(num):
+            prime_count += 1
+    return prime_count, numbers
+
+
+numbers_list = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+count, original_list = count_primes(numbers_list)
+print(f"Количество простых чисел: {count}")
+print(f"Исходный список: {original_list}")
+'''
+#4
+'''
+def remove_number(numbers, target):
+    removed_count = 0
+    for number in numbers:
+        if number == target:
+            removed_count += 1
+            numbers.remove(number)
+    return removed_count
+'''
+#5
+'''
+def merge_lists(list1, list2):
+    result = []
+
+    for item in list1:
+        result.append(item)
+
+    for item in list2:
+        result.append(item)
+
+    return result
+
+list_a = [1, 2, 3]
+list_b = [4, 5, 6]
+
+merged = merge_lists(list_a, list_b)
+print(merged) 
+'''
+#6
+'''
+numbers = [4, 5, 6, 3, 9] [4]
+def pow(numbers, k):
+    return [x ** k for x in numbers] [4]
+'''

@@ -236,4 +236,21 @@ print(f"Зарплата менеджера 1: {salary_manager1}")
 print(f"Зарплата менеджера 2: {salary_manager2}")
 print(f"Зарплата менеджера 3: {salary_manager3}")
 '''
+'''
+import random
+N = 10
+list_sort_buble = []
+for i in range(10) :
+    list_sort_buble.append(random.randint(0,100))
+print(f'Начальный список: ' "{list_sort_buble}")
+for i in range(N) :
+    for j in range (N - 1 - i):
+        if list_sort_buble[j] > list_sort_buble[j+1] :
+            list_sort_buble[j], list_sort_buble[j+1]
+print(f"Отсортированный список: {list_sort_buble}")
+'''
+
+
+
+
 

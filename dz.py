@@ -257,7 +257,7 @@
 #
 # even_elements = sorted([x for x in my_list_2 if x % 2 == 0])
 #
-# 
+#
 # unique_min = min(my_list_2)
 # unique_max = max(my_list_2)
 #

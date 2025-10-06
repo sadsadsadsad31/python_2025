@@ -307,3 +307,58 @@
 # result_list_2 = result_list_2[:45]
 #
 # print("Отсортированный список :", result_list_2)
+
+#10/6
+#3
+#import random
+#
+# def insertion_sort_desc(arr):
+#     iterations = 0
+#     for i in range(1, len(arr)):
+#         key = arr[i]
+#         j = i - 1
+#         while j >= 0 and key > arr[j]:
+#             arr[j + 1] = arr[j]
+#             j -= 1
+#             iterations += 1
+#         arr[j + 1] = key
+#         iterations += 1
+#     return iterations
+#
+
+# numbers = random.sample(range(1, 101), 15)
+#
+
+# iterations = insertion_sort_desc(numbers)
+#
+
+# print("Отсортированный список:", numbers)
+# print("Количество итераций:", iterations)
+
+# 4
+# words = ["apple", "banana", "cherry", "date", "apricot"]
+#
+
+# words.sort()
+#
+
+# print("Отсортированный список:", words)
+
+#5
+# def sort_excluding_index(arr, k):
+#     left_part = arr[:k]
+#     right_part = arr[k + 1:]
+#
+#     left_part.sort()
+#     right_part.sort()
+#
+#     sorted_arr = left_part + [arr[k]] + right_part
+#     return sorted_arr
+#
+# array = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+# k = 4
+#
+# sorted_array = sort_excluding_index(array, k)
+#
+# print("Отсортированный массив:", sorted_array)
+#

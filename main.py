@@ -321,3 +321,227 @@
 # print(f"Неотсортированный список: {words}")
 # words.sort()
 # print(f"Отсортированный список: {words}")
+
+
+# # import re
+# #
+# # def isCyrillic(text):
+# #     """Проверяет, содержит ли текст кириллические символы."""
+# #     return bool(re.search('[а-яА-Я]', text))
+# #
+# # def create_letter_points_dict(point_map):
+# #     """Создает словарь для быстрого поиска очков по букве."""
+# #     letter_points = {}
+# #     for points, letters in point_map.items():
+# #         for letter in letters:
+# #             letter_points[letter] = points
+# #     return letter_points
+# #
+# # point_en_map = {1:'AEIOULNSTR',
+# #                 2:'DG',
+# #                 3:'BCMP',
+# #                 4:'FHVWY',
+# #                 5:'K',
+# #                 8:'JX',
+# #                 10:'QZ'}
+# #
+# # point_ru_map = {1:'АВЕИНОСТ',
+# #                 2:'ДКЛМПУ',
+# #                 3:'БГЁЬЯ',
+# #                 4:'ЙЫ',
+# #                 5:'ЖЗЧЦ',
+# #                 8:'ШЭЮ',
+# #                 10:'ФЩЪ'}
+# #
+# # en_letter_points = create_letter_points_dict(point_en_map)
+# # ru_letter_points = create_letter_points_dict(point_ru_map)
+# #
+# # def calculate_scrabble_score(word, letter_points_dict):
+# #     """Подсчитывает очки за слово, используя предоставленный словарь букв."""
+# #     score = 0
+# #     for letter in word:
+# #         score += letter_points_dict.get(letter, 0)
+# #     return score
+# #
+# # def play_scrabble_multiplayer(num_players=2, num_rounds=3):
+# #     """
+# #     Реализует многопользовательский режим игры Скрабл.
+# #
+# #     Args:
+# #         num_players (int): Количество игроков.
+# #         num_rounds (int): Количество раундов.
+# #     """
+# #     if num_players > 10:
+# #         print("Максимальное количество игроков - 10.")
+# #         num_players = 10
+# #     if num_rounds > 10:
+# #         print("Максимальное количество раундов - 10.")
+# #         num_rounds = 10
+# #
+# #     players = {}
+#
+#     print("--- Добро пожаловать в Скрабл! ---")
+#
+#
+#     for i in range(num_players):
+#         player_name = input(f"Введите имя игрока {i+1}: ").strip()
+#         players[player_name] = {'total_score': 0, 'rounds': []}
+#
+#
+#     for round_num in range(1, num_rounds + 1):
+#         print(f"\n--- Раунд {round_num} ---")
+#         for player_name in players:
+#             while True:
+#                 word = input(f"{player_name}, введите ваше слово: ").strip().upper()
+#                 if not word:
+#                     print("Слово не может быть пустым. Попробуйте снова.")
+#                     continue
+#
+#
+#                 if isCyrillic(word):
+#                     letter_points = ru_letter_points
+#                 else:
+#                     letter_points = en_letter_points
+#
+#
+#                 valid_word = True
+#                 for char in word:
+#                     if char not in letter_points:
+#                         valid_word = False
+#                         print(f"Слово '{word}' содержит недопустимые буквы ({char}). Попробуйте снова.")
+#                         break
+#
+#                 if valid_word:
+#                     round_score = calculate_scrabble_score(word, letter_points)
+#                     players[player_name]['total_score'] += round_score
+#                     players[player_name]['rounds'].append(round_score)
+#                     print(f"Ваши очки за этот раунд: {round_score}")
+#                     break
+#
+#
+#     print("\n--- Итоговые результаты ---")
+#     sorted_players = sorted(players.items(), key=lambda item: item[1]['total_score'], reverse=True)
+#
+#     for i, (player_name, data) in enumerate(sorted_players):
+#         print(f"{i+1}. {player_name}: Общий счет - {data['total_score']} (Раунды: {', '.join(map(str, data['rounds']))})")
+#
+# if __name__ == "__main__":
+#     try:
+#         num_players_input = int(input("Введите количество игроков (до 10): "))
+#         num_rounds_input = int(input("Введите количество раундов (до 10): "))
+#         play_scrabble_multiplayer(num_players=num_players_input, num_rounds=num_rounds_input)
+#     except ValueError:
+#         print("Некорректный ввод. Пожалуйста, вводите числа.")
+#     except Exception as e:
+#         print(f"Произошла ошибка: {e}")
+
+# backpack_items = {
+#     'Зажигалка': {'weight': 20, 'value': 5},
+#     'Компас': {'weight': 100, 'value': 10},
+#     'Фрукты': {'weight': 500, 'value': 30},
+#     'Рубашка': {'weight': 300, 'value': 20},
+#     'Термос': {'weight': 1000, 'value': 50},
+#     'аптечка': {'weight': 200, 'value': 40},
+#     'Куртка': {'weight': 600, 'value': 35},
+#     'Бинокль': {'weight': 400, 'value': 25},
+#     'Удочка': {'weight': 1300, 'value': 15},
+#     'Салфетки': {'weight': 40, 'value': 10},
+#     'Бутерброды': {'weight': 800, 'value': 45},
+#     'Палатка': {'weight': 5500, 'value': 100},
+#     'Спальный мешок': {'weight': 2500, 'value': 80},
+#     'Изолента': {'weight': 250, 'value': 15},
+#     'Котел': {'weight': 3000, 'value': 70}
+# }
+#
+# max_weight_kg = float(input("Введите допустимый вес рюкзака (кг): "))
+# max_weight_grams = max_weight_kg * 1000
+#
+# print(f"\n--- Анализ рюкзака (макс. вес: {max_weight_kg:.2f} кг) ---")
+#
+# items_can_take = []
+# items_cannot_take = []
+# current_weight = 0
+# total_value = 0
+#
+# sorted_items = sorted(backpack_items.items(),
+#                       key=lambda item: item[1]['value'] / item[1]['weight'] if item[1]['weight'] > 0 else float('inf'),
+#                       reverse=True)
+#
+# print("\nВещи, которые могут поместиться (выбраны жадным методом по ценности/вес):")
+# for item_name, details in sorted_items:
+#     item_weight = details['weight']
+#     item_value = details['value']
+#
+#     if current_weight + item_weight <= max_weight_grams:
+#         current_weight += item_weight
+#         total_value += item_value
+#         items_can_take.append((item_name, item_weight, item_value))
+#         print(f"- {item_name} (вес: {item_weight/1000:.2f} кг, ценность: {item_value})")
+#     else:
+#         items_cannot_take.append((item_name, item_weight, item_value))
+#
+# print(f"\nИтого помещено: {len(items_can_take)} вещей.")
+# print(f"Общий вес: {current_weight/1000:.2f} кг / {max_weight_kg:.2f} кг.")
+# print(f"Общая ценность: {total_value}")
+#
+# print("\n--- Все вещи, которые легче максимального веса ---")
+# all_lighter_items = []
+# for item_name, details in backpack_items.items():
+#     if details['weight'] < max_weight_grams:
+#         all_lighter_items.append((item_name, details['weight']))
+#         print(f"- {item_name} (вес: {details['weight']/1000:.2f} кг)")
+#
+# print("\n--- Все вещи, которые тяжелее максимального веса ---")
+# all_heavier_items = []
+# for item_name, details in backpack_items.items():
+#     if details['weight'] > max_weight_grams:
+#         all_heavier_items.append((item_name, details['weight']))
+#         print(f"- {item_name} (вес: {details['weight']/1000:.2f} кг)")
+
+# def create_phone_book_entry(tel, vk=None, youtube=None, telegram=None):
+#     """Создает запись для телефонной книги."""
+#     entry = {'tel': tel}
+#     if vk:
+#         entry['vk'] = vk
+#     if youtube:
+#         entry['youtube'] = youtube
+#     if telegram:
+#         entry['telegram'] = telegram
+#     return entry
+#
+# phone_book = {
+#     "Маша": create_phone_book_entry('+7922123561', vk='vk.com/masha321', youtube='youtube.com/masha321', telegram='t.me/masha321'),
+#     "Петр": create_phone_book_entry('+7911987654', vk='vk.com/petr_ivanov'),
+#     "Анна": create_phone_book_entry('+79035551212', telegram='t.me/anna_s'),
+#     "Сергей": create_phone_book_entry('+79500001122', youtube='youtube.com/sergey_vlog'),
+#     "Иван": create_phone_book_entry('+79601112233') # Только телефон
+# }
+#
+# def search_contact(book, name):
+#     """Ищет контакт в телефонной книге."""
+#     name_capitalized = name.strip().capitalize() # Приводим к единому виду
+#     if name_capitalized in book:
+#         return book[name_capitalized]
+#     else:
+#         return None
+#
+# def display_contact_info(contact_data):
+#     """Красиво выводит информацию о контакте."""
+#     if contact_data:
+#         print("\n--- Информация о контакте ---")
+#         for key, value in contact_data.items():
+#             print(f"{key.capitalize()}: {value}")
+#         print("---------------------------")
+#     else:
+#         print("Контакт не найден.")
+#
+# if __name__ == "__main__":
+#     while True:
+#         user_search = input("Введите имя контакта для поиска (или 'выход' для завершения): ")
+#         if user_search.lower() == 'выход':
+#             break
+#
+#         contact_info = search_contact(phone_book, user_search)
+#         display_contact_info(contact_info)
+#
+#     print("Программа завершена.")

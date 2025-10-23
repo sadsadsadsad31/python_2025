@@ -362,3 +362,78 @@
 #
 # print("Отсортированный массив:", sorted_array)
 #
+
+
+#dz 10/23
+#1
+# def print_formatted_text():
+#   """
+#   Отображает на экране форматированный текст.
+#   """
+#   quote = "Don't compare yourself with anyone in this world...if you do so, you are insulting yourself."
+#   author = "Bill Gates"
+#   print(f'"{quote}"')
+#   print(f"\n{author}")
+#
+# print_formatted_text()
+#2
+# def print_even_numbers_between(num1, num2):
+#   """
+#   Принимает два числа и отображает все четные числа между ними.
+#
+#   Args:
+#     num1: Первое число.
+#     num2: Второе число.
+#   """
+#   start = min(num1, num2)
+#   end = max(num1, num2)
+#
+#   print(f"Четные числа между {start} и {end}:")
+#   for number in range(start, end + 1):
+#     if number % 2 == 0:
+#       print(number)
+#
+# print_even_numbers_between(10, 25)
+# print("-" * 20)
+# print_even_numbers_between(30, 15)
+#3
+# def draw_square(side_length, symbol, is_filled):
+#   """
+#   Отображает пустой или заполненный квадрат.
+#
+#   Args:
+#     side_length: Длина стороны квадрата.
+#     symbol: Символ для рисования квадрата.
+#     is_filled: Логическое значение, определяющее, заполнен ли квадрат.
+#   """
+#   if side_length <= 0:
+#     print("Длина стороны должна быть положительным числом.")
+#     return
+#
+#   if is_filled:
+#     for _ in range(side_length):
+#       print(symbol * side_length)
+#   else:
+#
+#     print(symbol * side_length)
+#     for _ in range(side_length - 2):
+#       print(symbol + " " * (side_length - 2) + symbol)
+#     if side_length > 1: # Если сторона больше 1, печатаем нижнюю строку
+#       print(symbol * side_length)
+#
+#
+# # Примеры вызова функции
+# print("Заполненный квадрат (сторона 4, символ '*'):")
+# draw_square(4, '*', True)
+# print("\n" + "=" * 20 + "\n")
+#
+# print("Пустой квадрат (сторона 5, символ '#'):")
+# draw_square(5, '#', False)
+# print("\n" + "=" * 20 + "\n")
+#
+# print("Пустой квадрат (сторона 1, символ '@'):")
+# draw_square(1, '@', False)
+# print("\n" + "=" * 20 + "\n")
+#
+# print("Пустой квадрат (сторона 2, символ '+'):")
+# draw_square(2, '+', False)

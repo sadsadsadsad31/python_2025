@@ -437,3 +437,100 @@
 #
 # print("Пустой квадрат (сторона 2, символ '+'):")
 # draw_square(2, '+', False)
+
+
+
+
+#dz 13.11
+
+
+# identification_codes = [123, 456, 789, 234]
+# phone_numbers = ['+79101112233', '+79223334455', '+79334445566', '+79445556677']
+#
+#
+# def display_users():
+#     for code, phone in zip(identification_codes, phone_numbers):
+#         print(f"ID: {code}, Phone: {phone}")
+#
+#
+# def sort_by_id():
+#     sorted_data = sorted(zip(identification_codes, phone_numbers), key=lambda x: x[0])
+#     for code, phone in sorted_data:
+#         print(f"ID: {code}, Phone: {phone}")
+#
+#
+# def sort_by_phone():
+#     sorted_data = sorted(zip(identification_codes, phone_numbers), key=lambda x: x[1])
+#     for code, phone in sorted_data:
+#         print(f"ID: {code}, Phone: {phone}")
+#
+#
+# def menu():
+#     while True:
+#         print("\nМеню:")
+#         print("1. Отсортировать по идентификационным кодам")
+#         print("2. Отсортировать по номерам телефона")
+#         print("3. Вывести список пользователей")
+#         print("4. Выход")
+#
+#         choice = input("Выберите действие: ")
+#
+#         if choice == '1':
+#             sort_by_id()
+#         elif choice == '2':
+#             sort_by_phone()
+#         elif choice == '3':
+#             display_users()
+#         elif choice == '4':
+#             print("Выход из программы.")
+#             break
+#         else:
+#             print("Неверный выбор. Попробуйте снова.")
+#
+#
+# menu()
+
+
+
+# 2
+# Списки данных
+# book_titles = ["Гарри Поттер", "Война и мир", "1984", "Мастер и Маргарита"]
+# release_years = [1997, 1869, 1949, 1967]
+#
+# def display_books():
+#     for title, year in zip(book_titles, release_years):
+#         print(f"Название: {title}, Год выпуска: {year}")
+#
+# def sort_by_title():
+#     sorted_data = sorted(zip(book_titles, release_years), key=lambda x: x[0])
+#     for title, year in sorted_data:
+#         print(f"Название: {title}, Год выпуска: {year}")
+#
+# def sort_by_year():
+#     sorted_data = sorted(zip(book_titles, release_years), key=lambda x: x[1])
+#     for title, year in sorted_data:
+#         print(f"Название: {title}, Год выпуска: {year}")
+#
+# def menu():
+#     while True:
+#         print("\nМеню:")
+#         print("1. Отсортировать по названию книг")
+#         print("2. Отсортировать по годам выпуска")
+#         print("3. Вывести список книг")
+#         print("4. Выход")
+#
+#         choice = input("Выберите действие: ")
+#
+#         if choice == '1':
+#             sort_by_title()
+#         elif choice == '2':
+#             sort_by_year()
+#         elif choice == '3':
+#             display_books()
+#         elif choice == '4':
+#             print("Выход из программы.")
+#             break
+#         else:
+#             print("Неверный выбор. Попробуйте снова.")
+#
+# menu()

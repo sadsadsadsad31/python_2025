@@ -534,3 +534,76 @@
 #             print("Неверный выбор. Попробуйте снова.")
 #
 # menu()
+
+
+#dz 14.11
+# list1 = [1, 3, 5]
+# list2 = [2, 4, 6]
+# list3 = [7, 8, 9]
+# list4 = [0, 10, 11]
+#
+#
+# combined_list = list1 + list2 + list3 + list4
+#
+# sort_order = input("Выберите порядок сортировки (возрастание/убывание): ").strip().lower()
+#
+# if sort_order == "возрастание":
+#     combined_list.sort()
+# elif sort_order == "убывание":
+#     combined_list.sort(reverse=True)
+# else:
+#     print("Некорректный ввод.")
+#
+# print("Отсортированный список:", combined_list)
+#
+# user_value = int(input("Введите значение для поиска: "))
+#
+# found = False
+# for i in combined_list:
+#     if i == user_value:
+#         found = True
+#         break
+#
+# if found:
+#     print(f"Значение {user_value} найдено.")
+# else:
+#     print(f"Значение {user_value} не найдено.")
+
+#2
+list1 = [1, 3, 5]
+list2 = [2, 4, 6]
+list3 = [7, 8, 9]
+list4 = [0, 10, 11]
+
+unique_elements = set(list1) ^ set(list2) ^ set(list3) ^ set(list4)
+unique_list = list(unique_elements)
+
+sort_order = input("Выберите порядок сортировки (возрастание/убывание): ").strip().lower()
+
+if sort_order == "возрастание":
+    unique_list.sort()
+elif sort_order == "убывание":
+    unique_list.sort(reverse=True)
+else:
+    print("Некорректный ввод.")
+
+print("Отсортированный список:", unique_list)
+
+def binary_search(lst, value):
+    low, high = 0, len(lst) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if lst[mid] == value:
+            return True
+        elif lst[mid] < value:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return False
+
+user_value = int(input("Введите значение для поиска: "))
+
+if binary_search(unique_list, user_value):
+    print(f"Значение {user_value} найдено.")
+else:
+    print(f"Значение {user_value} не найдено.")

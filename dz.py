@@ -570,40 +570,141 @@
 #     print(f"Значение {user_value} не найдено.")
 
 #2
-list1 = [1, 3, 5]
-list2 = [2, 4, 6]
-list3 = [7, 8, 9]
-list4 = [0, 10, 11]
+# list1 = [1, 3, 5]
+# list2 = [2, 4, 6]
+# list3 = [7, 8, 9]
+# list4 = [0, 10, 11]
+#
+# unique_elements = set(list1) ^ set(list2) ^ set(list3) ^ set(list4)
+# unique_list = list(unique_elements)
+#
+# sort_order = input("Выберите порядок сортировки (возрастание/убывание): ").strip().lower()
+#
+# if sort_order == "возрастание":
+#     unique_list.sort()
+# elif sort_order == "убывание":
+#     unique_list.sort(reverse=True)
+# else:
+#     print("Некорректный ввод.")
+#
+# print("Отсортированный список:", unique_list)
+#
+# def binary_search(lst, value):
+#     low, high = 0, len(lst) - 1
+#     while low <= high:
+#         mid = (low + high) // 2
+#         if lst[mid] == value:
+#             return True
+#         elif lst[mid] < value:
+#             low = mid + 1
+#         else:
+#             high = mid - 1
+#     return False
+#
+# user_value = int(input("Введите значение для поиска: "))
+#
+# if binary_search(unique_list, user_value):
+#     print(f"Значение {user_value} найдено.")
+# else:
+#     print(f"Значение {user_value} не найдено.")
 
-unique_elements = set(list1) ^ set(list2) ^ set(list3) ^ set(list4)
-unique_list = list(unique_elements)
 
-sort_order = input("Выберите порядок сортировки (возрастание/убывание): ").strip().lower()
-
-if sort_order == "возрастание":
-    unique_list.sort()
-elif sort_order == "убывание":
-    unique_list.sort(reverse=True)
-else:
-    print("Некорректный ввод.")
-
-print("Отсортированный список:", unique_list)
-
-def binary_search(lst, value):
-    low, high = 0, len(lst) - 1
-    while low <= high:
-        mid = (low + high) // 2
-        if lst[mid] == value:
-            return True
-        elif lst[mid] < value:
-            low = mid + 1
-        else:
-            high = mid - 1
-    return False
-
-user_value = int(input("Введите значение для поиска: "))
-
-if binary_search(unique_list, user_value):
-    print(f"Значение {user_value} найдено.")
-else:
-    print(f"Значение {user_value} не найдено.")
+# Задание
+# 1
+# import random
+#
+#
+# class Number:
+#     def __init__(self):
+#         self.numbers = [random.randint(1, 100) for _ in range(15)]
+#
+#     def process_numbers(self):
+#         first_third = self.numbers[:len(self.numbers) // 3]
+#         average = sum(self.numbers) / len(self.numbers)
+#
+#         if average > len(self.numbers) // 3:
+#             first_third.sort()
+#         else:
+#             first_third.sort(reverse=True)
+#
+#         remaining = self.numbers[len(self.numbers) // 3:]
+#         remaining.sort(reverse=True)
+#
+#         self.numbers = first_third + remaining
+#
+#     def display(self):
+#         print(self.numbers)
+#
+#
+# number = Number()
+# print("Исходный список:", number.numbers)
+# number.process_numbers()
+# print("Обработанный список:", number.numbers)
+#
+# ### Задание 2
+#
+#
+# def main():
+#     marks = [random.randint(1, 12) for _ in range(10)]
+#
+#     def display_marks():
+#         print("Оценки студентов:", marks)
+#
+#     def change_mark():
+#         index = int(input("Введите номер студента (0-9): "))
+#         new_mark = int(input("Введите новую оценку (1-12): "))
+#         marks[index] = new_mark
+#
+#     def display_average():
+#         average = sum(marks) / len(marks)
+#         print(f"Средний балл: {average:.2f}")
+#
+#     def sort_marks():
+#         marks.sort()
+#         print("Оценки отсортированы:", marks)
+#
+#     while True:
+#         print("\nМеню:")
+#         print("1. Вывод оценок")
+#         print("2. Пересмотр экзамена (изменение оценки)")
+#         print("3. Вывод среднего балла")
+#         print("4. Сортировка списка оценок")
+#         print("5. Выход")
+#
+#         choice = input("Выберите действие: ")
+#         if choice == '1':
+#             display_marks()
+#         elif choice == '2':
+#             change_mark()
+#         elif choice == '3':
+#             display_average()
+#         elif choice == '4':
+#             sort_marks()
+#         elif choice == '5':
+#             break
+#         else:
+#             print("Неверный ввод, попробуйте снова.")
+#
+#
+# main()
+#
+# ### Задание 3
+#
+#
+# def bubble_sort_optimized(arr):
+#     n = len(arr)
+#     for i in range(n):
+#         swapped = False
+#         for j in range(0, n - i - 1):
+#             if arr[j] > arr[j + 1]:
+#                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
+#                 swapped = True
+#         if not swapped:
+#             break
+#     return arr
+#
+#
+# numbers = [random.randint(1, 100) for _ in range(10)]
+# print("Исходный список:", numbers)
+# sorted_numbers = bubble_sort_optimized(numbers)
+# print("Отсортированный список:", sorted_numbers)

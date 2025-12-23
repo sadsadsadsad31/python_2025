@@ -547,4 +547,33 @@
 #     print("Программа завершена.")
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+
+# import random
+# class MSDice:
+#     def _init_(self, sides):
+#         self.sides = sides
+#         self.current_value = 1
+#         def roll(self):
+#             self.current_value = random.randint(1, self.sides)
+#             return self.current_value
+#         def_str_(self):
+#         return f"MSDice({self.sides}-sided): Current Value = {self.current_value}"
+#     class D4(MSDice):
+#         def_init_(self):
+#         super()._init_(4)
+#     class D6(MSDice):
+#         def_init_(self):
+#         super()._init_(6)
+#
+#         class D10(MSDice):
+#             def_init_(self):
+#             super()._init_(10)
+#
+#             class D20(MSDice):
+#                 def_init_(self):
+#                 super()._init_(20)
+#                 if_name_=="_main_":
+#                 dice = D20()
+#                 print(dice)
+#                 print("Rolling dice...")
+#                 print("Result", dice.roll())
